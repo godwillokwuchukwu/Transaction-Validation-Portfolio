@@ -1,0 +1,30 @@
+============================================================
+TRANSACTION VALIDATION REPORT
+============================================================
+Source file: c:\Users\Godwill\Desktop\day30-checkpoint\mini_project\transactions.csv
+Total rows read: 10
+
+-- Amount validation (must be between 1 and 10000) --
+  INVALID  TX006: amount=-50.0
+  INVALID  TX007: amount='abc'
+  INVALID  TX008: amount=12000.0
+
+-- Transaction ID format (TX + 3 digits) --
+  INVALID  TX9
+
+-- Duplicate detection --
+  Duplicates found: TX002
+
+-- Suspicious transactions (amount > 5000) --
+  FLAGGED  TX003: $7500.00 on 2026-09-01
+  FLAGGED  TX005: $9800.00 on 2026-09-02
+  FLAGGED  TX008: $12000.00 on 2026-09-03
+
+-- Summary statistics (numeric, valid-format amounts only) --
+  Count:   9
+  Total:   $37800.00
+  Average: $4200.00
+
+Daily Report: 9 transactions, Total: $37800, Average: $4200
+
+============================================================
